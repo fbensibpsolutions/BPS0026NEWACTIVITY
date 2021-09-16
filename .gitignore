@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NEW_BPS0026_MVC_ACTIVITY/NEW_BPS0026_MVC_ACTIVITY/obj
+/NEW_BPS0026_MVC_ACTIVITY/NEW_BPS0026_MVC_ACTIVITY/bin/Debug/netcoreapp2.1
+/NEW_BPS0026_MVC_ACTIVITY/.vs/NEW_BPS0026_MVC_ACTIVITY/v16
