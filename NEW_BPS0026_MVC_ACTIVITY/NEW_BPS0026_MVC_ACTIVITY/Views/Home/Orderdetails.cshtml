@@ -1,0 +1,36 @@
+﻿<input type="button" value="Return Home" class="returnHome" />
+<h2>@ViewData["OrderNum"]</h2>
+<table>
+    <tr>
+        <td>Food  Name</td>
+        <td>Quantity</td>
+        <td>Price</td>
+    </tr>
+    <tr>
+        <td>Bear</td>
+        <td>10</td>
+        <td>P50</td>
+    </tr>
+    <tr>
+        <td>Red-horse</td>
+        <td>10</td>
+        <td>P50</td>
+    </tr>
+    <tr>
+        <td>Vodka</td>
+        <td>10</td>
+        <td>P50</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><h5>Total: P150</h5></td>
+    </tr>
+</table>
+
+
+<script>
+    document.querySelector('.returnHome').addEventListener('click', event => {
+        location.href = "@Url.Action("Index","Home")";
+    });
+</script>

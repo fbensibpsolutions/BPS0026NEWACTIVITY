@@ -29,6 +29,12 @@ namespace NEW_BPS0026_MVC_ACTIVITY.Controllers
             return View();
         }
 
+        public IActionResult Orderdetails(string odnum)
+        {
+            ViewData["OrderNum"] = odnum;
+
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
