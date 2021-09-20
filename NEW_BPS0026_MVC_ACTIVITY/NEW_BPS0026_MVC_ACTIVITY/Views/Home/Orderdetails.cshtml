@@ -1,36 +1,40 @@
-﻿<input type="button" value="Return Home" class="returnHome" />
-<h2>@ViewData["OrderNum"]</h2>
-<table>
-    <tr>
-        <td>Food  Name</td>
-        <td>Quantity</td>
-        <td>Price</td>
-    </tr>
-    <tr>
-        <td>Bear</td>
-        <td>10</td>
-        <td>P50</td>
-    </tr>
-    <tr>
-        <td>Red-horse</td>
-        <td>10</td>
-        <td>P50</td>
-    </tr>
-    <tr>
-        <td>Vodka</td>
-        <td>10</td>
-        <td>P50</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td><h5>Total: P150</h5></td>
-    </tr>
-</table>
+﻿@model IEnumerable<Order>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/css/Order.css" rel="stylesheet" />
+    <style>
+    </style>
+    <style>
+    </style>
+</head>
+<body>
 
+    <input type="button" value="Return Home" class="returnHome" />
+    <h2>@ViewData["no"]</h2>
+    <table>
+        <tr>
+            <td>Order No.</td>
+            <td>Customer Name</td>
+            <td>Order Date</td>
+            <td>Total Amount</td>
+        </tr>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.No</td>
+                <td>@order.CustomerName</td>
+                <td>@order.Date</td>
+                <td><b>@order.Amount</b></td>
+            </tr>
+        }
+    </table>
 
-<script>
+    <script>
     document.querySelector('.returnHome').addEventListener('click', event => {
         location.href = "@Url.Action("Index","Home")";
     });
-</script>
+    </script>
+</body>
+</html>

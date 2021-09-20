@@ -1,53 +1,35 @@
-﻿<!DOCTYPE html>
+﻿
+@model IEnumerable<Order>
+
+<!DOCTYPE html>
 <html>
 <head>
     <title></title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <link href="~/css/Order.css" rel="stylesheet" />
 </head>
 <body>
-    @using (Html.BeginForm("Orderdetails", "Home"))
-    {
-        <table>
-            <tr>
-                <td>Order No.</td>
-                <td>Order Date</td>
-                <td>Customer Name</td>
-                <td>Total Amount</td>
-            </tr>
-            <tr>
 
-                <td class="order_details">
-                    <input type="submit" name="odnum" value="OD-202109161" />
-                </td>
-                <td name="od_date">September, 16, 2021</td>
-                <td name="od_name">Frank</td>
-                <td name="od_amount"><b>P</b>150</td>
-            </tr>
+    <table>
+        <tr>
+            <td>Order No.</td>
+            <td>Customer Name</td>
+            <td>Order Date</td>
+            <td>Total Amount</td>
+        </tr>
+        @foreach (var order in Model)
+        {
             <tr>
-                <td class="order_details">
-                    <input type="submit" name="odnum" value="OD-202109162" />
+                <td>
+                    @using (Html.BeginForm("Orderdetails", "Home"))
+                    {
+                        <input type="submit" name="no" value="@order.No" />
+                    }
                 </td>
-                <td name="od_date">September, 15, 2021</td>
-                <td name="od_name">Nando</td>
-                <td name="od_amount"><b>P</b>150</td>
+                <td>@order.CustomerName.</td>
+                <td>@order.Date</td>
+                <td><b>@order.Amount</b></td>
             </tr>
-        </table>
-    }
+        }
+    </table>
 </body>
 </html>
